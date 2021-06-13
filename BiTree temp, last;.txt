@@ -1,0 +1,21 @@
+ BiTree temp, last;
+    last = NULL;
+ BiNode *p = root,*last = NULL;
+ while(is_empty(s) || p){
+     while(p){
+         push(s,p);
+         if(p == node){
+             return true;
+         }
+         p = p ->left;
+     }
+     top(s,p);
+     if(p->right == NULL || p -> right == last){
+         last = p;
+         pop(s,p);
+         p = NULL;
+     }
+     else 
+        p = p -> right;
+ }
+ return false;
